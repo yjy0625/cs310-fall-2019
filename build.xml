@@ -1,0 +1,40 @@
+<project name="Project 1" default="compile" basedir=".">
+    <description>Project 1 for CSCI 310 in Fall 2019.</description>
+
+    <!-- global properties for the build file -->
+    <property name="source.dir" location="src" />
+    <property name="build.dir" location="bin" />
+    <property name="dist.dir" location="dist" />
+    <property name="doc.dir" location="doc" />
+
+    <target name="init" description="setup project directories">
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${dist.dir}" />
+        <mkdir dir="${doc.dir}" />
+    </target>
+
+    <target name="clean" description="tidy up the workspace">
+        <delete dir="${build.dir}" />
+        <delete dir="${dist.dir}" />
+        <delete dir="${doc.dir}" />
+        <delete>
+            <fileset defaultexcludes="no" dir="${source.dir}" includes="**/*~" />
+        </delete>
+    </target>
+
+    <target name="compile" depends="init" description="compile java sources">
+        <javac srcdir="${source.dir}" destdir="${build.dir}" />
+    </target>
+
+    <target name="dist" depends="init" description="generate jar files">
+
+    </target>
+
+    <target name="doc" depends="init" description="generate documentation">
+        <javadoc sourcepath="${source.dir}" destdir="${doc.dir}" />
+    </target>
+
+    <target name="test" depends="init" description="run tests for the project">
+
+    </target>
+</project>

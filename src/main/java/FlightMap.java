@@ -1,4 +1,4 @@
-package main;
+package main.java;
 
 import javafx.util.Pair;
 
@@ -99,7 +99,7 @@ public class FlightMap {
         StringBuilder sb = new StringBuilder("");
 
         // build headline
-        int pathWidth = Math.max(21, this.maxPathLength + 1);
+        int pathWidth = Math.max(21, this.maxPathLength + 2);
         int priceWidth = Math.max(10, this.maxPriceLength);
         String headline = String.format("%-13s%-" + pathWidth + "s%-" + priceWidth + "s\n",
                 "Destination",
@@ -112,7 +112,7 @@ public class FlightMap {
                 continue;
             }
 
-            sb.append(String.format("%-13s%-" + pathWidth + "s%-" + priceWidth + "d\n",
+            sb.append(String.format("%-13s%-" + pathWidth + "s$%-" + (priceWidth - 1) + "d\n",
                     dest,
                     priceMap.get(dest).getKey(),
                     priceMap.get(dest).getValue()));

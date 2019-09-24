@@ -1,4 +1,4 @@
-package main;
+package main.java;
 
 import java.io.*;
 import java.nio.file.*;
@@ -45,7 +45,7 @@ public class SearchMap {
 
     public static void main(String[] args) throws IOException {
         if(args.length != 2) {
-            System.out.println("Command Line Format: java main.SearchMap input_file output_file");
+            System.out.println("Command Line Format: java main.java.SearchMap input_file output_file");
         }
 
         String inputFile = args[0];

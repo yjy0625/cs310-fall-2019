@@ -7,8 +7,16 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
+/**
+ * Flight map class that parses the flight map, calculates reachable
+ * destinations, the paths to them, and their costs, and generates a table
+ * containing readable format of the output.
+ */
 public class FlightMap {
 
+    /**
+     * Singleton instance for FlightMap class.
+     */
     private static FlightMap instance;
 
     private Map<String, HashMap<String, Integer>> flightMap;
@@ -18,6 +26,13 @@ public class FlightMap {
     private int maxPathLength;
     private int maxPriceLength;
 
+    /**
+     * Runs the flight map search from input string and outputs readable
+     * output to string.
+     * @param inputString flight map input in string format.
+     * @return reachable locations, the paths to them, and their costs in
+     * readable string format.
+     */
     public String run(String inputString) {
         this.reset();
         this.parseContent(inputString);
@@ -124,6 +139,10 @@ public class FlightMap {
         return sb.toString();
     }
 
+    /**
+     * Get singleton instance for FlightMap class.
+     * @return the instance for FlightMap class.
+     */
     public static FlightMap getInstance() {
         if(instance == null) {
             instance = new FlightMap();

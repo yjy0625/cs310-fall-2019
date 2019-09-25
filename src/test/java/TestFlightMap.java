@@ -1,5 +1,6 @@
 package test.java;
 import main.java.FlightMap;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,6 +9,7 @@ public class TestFlightMap {
 
     private FlightMap flightMap;
 
+    @Before
     public void setUp() {
         flightMap = FlightMap.getInstance();
     }

@@ -50,6 +50,7 @@ public class FlightMap {
     private void parseContent(String inputString) {
         String[] lines = inputString.split("\n");
         this.start = lines[0].trim();
+        this.flightMap.put(this.start, new HashMap<>());
         for(int i  = 1; i < lines.length; i++) {
             String line = lines[i].trim();
             String[] elements = line.split(" ");
